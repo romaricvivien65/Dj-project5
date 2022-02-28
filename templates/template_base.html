@@ -1,0 +1,52 @@
+{% load static %}
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block titre %} {% endblock%}</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="{% static 'css/fontawesome-free-5.15.4/all.min.css' %}">
+  <link href="{% static 'css/bootstrap-5.1.3/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'link_index' %}">
+          <img src="{% static 'images/logo_nav.png' %}" alt="">
+
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'link_index' %}">ACCUEIL</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'app_articles:link_articles' %}">ARTICLES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'link_contact' %}">CONTACT</a>
+            </li>    
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+{% block contenu %} {% endblock %}
+
+<footer class="bg-secondary text-white mt-5 pt-3 pb-5">
+  <div class="container">
+    <span>&copy; 2022 | VBLOG.COM</span>
+  </div>
+</footer>
+  <!-- js -->
+  <script src="{% static 'js/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
